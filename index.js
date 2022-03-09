@@ -22,7 +22,7 @@ btnNum[i].addEventListener('click', function(tempVar) {
 });
 }
 
-for (let j = 0; j < btnNum.length; j++) {
+for (let j = 0; j < btnOperate.length; j++) {
 btnOperate[j].addEventListener('click', function() {
     if (btnOperate[j].value === 'Del') {
         delC();
