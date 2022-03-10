@@ -1,8 +1,8 @@
 let newStr = false;
 let choice = NaN;
 let finished = 0;
-const btnNum = document.getElementsByClassName('btnNum');
-const btnOperate = document.getElementsByClassName('btnOperate');
+const btnNum = document.querySelectorAll('.btnNum');
+const btnOperate = document.querySelectorAll('.btnOperate');
 const inputBar = document.getElementById('myInput');
 const resultBar = document.getElementById('result');
 
@@ -28,7 +28,7 @@ btnOperate[j].addEventListener('click', function() {
         delC();
     }
     else if (btnOperate[j].value === '=') {
-        if (newStr === false) {
+        if (newStr === false && resultBar.innerHTML != '') {
             return 0;
         }
         else {
@@ -66,19 +66,19 @@ function calculate(temp) {
     let myResult;
     if (temp === 0) {
         myResult = a + b;
-        resultBar.innerHTML = myResult.toString(16);
+        resultBar.innerHTML = myResult.toString();
     }
     else if (temp === 1) {
         myResult = a - b;
-        resultBar.innerHTML = myResult.toString(16);
+        resultBar.innerHTML = myResult.toString();
     }
     else if (temp === 2) {
         myResult = a * b;
-        resultBar.innerHTML = myResult.toString(16);
+        resultBar.innerHTML = myResult.toString();
     }
     else if (temp === 3) {
         myResult = a / b;
-        resultBar.innerHTML = myResult.toString(16);
+        resultBar.innerHTML = myResult.toString();
     }
     finished = 1;
     newStr = false;
